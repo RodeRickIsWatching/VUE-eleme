@@ -1,0 +1,252 @@
+[
+  {
+    "name": "Hi鱼饭子BuddhaBowl&Sushi(巨鹿路店)",
+    "deliveryWay": "",
+    "score": "5",
+    "monthlySale": "1586",
+    "deliveryPrice": "15",
+    "longDistanceDeliveryPrice": "4.3",
+    "distance": "500",
+    "deliveryTime": "36",
+    "tag": [
+      {
+        "type": 0,
+        "name": "烧烤"
+      },
+      {
+        "type": 1,
+        "name": "品质联盟"
+      }
+    ],
+    "activity": [
+      {
+        "type": "0",
+        "des": "新用户下单立减16元"
+      },
+      {
+        "type": "1",
+        "des": "满55减30，满80减40，满100减50"
+      },
+      {
+        "type": "2",
+        "des": "超值换购"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "4",
+        "des": "单品折扣"
+      },
+      {
+        "type": "5",
+        "des": "该商户食品安全已由国泰产检承担"
+      },
+      {
+        "type": "6",
+        "des": "该商家支持发票"
+      }
+    ]
+  },
+  {
+    "name": "炙串阁烧烤（外滩店）",
+    "deliveryWay": "蜂鸟专送",
+    "score": "3.7",
+    "monthlySale": "1586",
+    "deliveryPrice": "15",
+    "longDistanceDeliveryPrice": "4.3",
+    "distance": "1.93",
+    "deliveryTime": "36",
+    "tag": [
+      {
+        "type": 0,
+        "name": "烧烤"
+      },
+      {
+        "type": 2,
+        "name": "口碑人气好店"
+      }
+    ],
+    "activity": [
+      {
+        "type": "0",
+        "des": "新用户下单立减16元"
+      },
+      {
+        "type": "1",
+        "des": "满55减30，满80减40，满100减50"
+      },
+      {
+        "type": "2",
+        "des": "满120元赠送锡纸鸡鸭血1份"
+      },
+      {
+        "type": "4",
+        "des": "单品折扣"
+      },
+      {
+        "type": "5",
+        "des": "该商户食品安全已由国泰产检承担"
+      }
+    ]
+  },
+  {
+    "name": "达美乐",
+    "deliveryWay": "蜂鸟专送",
+    "score": "2",
+    "monthlySale": "1586",
+    "deliveryPrice": "15",
+    "longDistanceDeliveryPrice": "4.3",
+    "distance": "11",
+    "deliveryTime": "36",
+    "tag": [
+      {
+        "type": 0,
+        "name": "烧烤"
+      },
+      {
+        "type": 1,
+        "name": "品质联盟"
+      },
+      {
+        "type": 2,
+        "name": "口碑人气好店"
+      }
+    ],
+    "activity": [
+      {
+        "type": "0",
+        "des": "新用户下单立减16元"
+      },
+      {
+        "type": "1",
+        "des": "满55减30，满80减40，满100减50"
+      },
+      {
+        "type": "2",
+        "des": "满120元赠送锡纸鸡鸭血1份"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "5",
+        "des": "该商户食品安全已由国泰产检承担"
+      }
+    ]
+  },
+  {
+    "name": "汉堡王（大宁中心店22604）",
+    "deliveryWay": "蜂鸟专送",
+    "score": "4.25",
+    "monthlySale": "1586",
+    "deliveryPrice": "15",
+    "longDistanceDeliveryPrice": "4.3",
+    "distance": "999",
+    "deliveryTime": "36",
+    "tag": [
+      {
+        "type": 0,
+        "name": "烧烤"
+      },
+      {
+        "type": 1,
+        "name": "品质联盟"
+      },
+      {
+        "type": 2,
+        "name": "口碑人气好店"
+      }
+    ],
+    "activity": [
+      {
+        "type": "0",
+        "des": "新用户下单立减16元"
+      },
+      {
+        "type": "1",
+        "des": "满55减30，满80减40，满100减50"
+      },
+      {
+        "type": "2",
+        "des": "满120元赠送锡纸鸡鸭血1份"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "5",
+        "des": "该商户食品安全已由国泰产检承担"
+      }
+    ]
+  },
+  {
+    "name": "Hi鱼饭子BuddhaBowl&Sushi(巨鹿路店)",
+    "deliveryWay": "",
+    "score": "5",
+    "monthlySale": "1586",
+    "deliveryPrice": "15",
+    "longDistanceDeliveryPrice": "4.3",
+    "distance": "500",
+    "deliveryTime": "36",
+    "tag": [
+      {
+        "type": 0,
+        "name": "烧烤"
+      },
+      {
+        "type": 1,
+        "name": "品质联盟"
+      }
+    ],
+    "activity": [
+      {
+        "type": "0",
+        "des": "新用户下单立减16元"
+      },
+      {
+        "type": "1",
+        "des": "满55减30，满80减40，满100减50"
+      },
+      {
+        "type": "2",
+        "des": "超值换购"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "3",
+        "des": "单品定价"
+      },
+      {
+        "type": "4",
+        "des": "单品折扣"
+      },
+      {
+        "type": "5",
+        "des": "该商户食品安全已由国泰产检承担"
+      },
+      {
+        "type": "6",
+        "des": "该商家支持发票"
+      }
+    ]
+  }
+]

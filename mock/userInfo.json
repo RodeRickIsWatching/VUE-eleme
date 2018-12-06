@@ -1,0 +1,28 @@
+{
+  "visitor": {
+    "userInfo": null,
+    "city": "",
+    "defaultLocation": ""
+  },
+  "member": {
+    "userInfo": {
+      "mainInfo": {
+        "userName": "33442d13c",
+        "userNickName": "Roderick",
+        "userPhone": "12345678901"
+      },
+      "otherInfo": {
+        "wallet": "0.00",
+        "discount": "0",
+        "coins": "198"
+      },
+      "city": "上海市"
+    },
+    "orderedLocation": {
+      "orderedName": "陆",
+      "orderedPhone": "12345678901",
+      "defaultLocation": "万荣路xxx弄xxx号xxx室"
+    }
+  }
+}
+

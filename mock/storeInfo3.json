@@ -1,0 +1,884 @@
+{
+  "seller": {
+    "name": "汉堡王（大宁中心店22604）",
+    "description": "蜂鸟专送",
+    "deliveryTime": 20,
+    "score": 4.8,
+    "serviceScore": 4.9,
+    "foodScore": 4.8,
+    "minPrice": 20,
+    "deliveryPrice": 5,
+    "sellCount": 3985,
+    "bulletin": "猪肘堡，重磅回归！",
+    "rankRate": 69.2,
+    "ratingCount": 24,
+    "supports": [
+      {
+        "type": 1,
+        "description": "满55减10，满70减22，满80减30"
+      },
+      {
+        "type": 3,
+        "description": "明星"
+      },
+      {
+        "type": 0,
+        "description": "新用户下单立减17元"
+      },
+      {
+        "type": 3,
+        "description": "双人"
+      },
+      {
+        "type": 3,
+        "description": "上海地区"
+      },
+      {
+        "type": 3,
+        "description": "霸王"
+      },
+      {
+        "type": 3,
+        "description": "经典"
+      },
+      {
+        "type": 3,
+        "description": "11111"
+      },
+      {
+        "type": 3,
+        "description": "1111"
+      },
+      {
+        "type": 3,
+        "description": "11.11."
+      }
+    ],
+    "avatar": "http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_250",
+    "pics": {
+      "logo": "../assets/logo.webp",
+      "banner": "../assets/bg.webp",
+      "ad": "../assets/ad.webp"
+    },
+    "infos": [
+      "信息：猪肘堡，重磅回归！",
+      "品类：汉堡，炸鸡炸串",
+      "地址：上海市静安区万荣路777弄4号楼101号商铺",
+      "营业时间：09:00-22:45",
+      "商家电话：4008988788"
+    ]
+  },
+  "goods": [
+    {
+      "name": "热销",
+      "type": 1,
+      "description":"大家喜欢吃，才叫真好吃。",
+      "foods": [
+        {
+          "name": "王道椒香鸡腿",
+          "price": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "王道嫩香鸡块",
+          "price": 11,
+          "oldPrice": 11,
+          "description": "5粒装王道嫩香鸡块，金黄香嫩，黑椒口味（主要原料：鸡肉）",
+          "sellCount": 580,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "王道川蜀鸡翅",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "椒麻鲜香，口味浓郁，尝过就会爱上TA（主要原料：鸡翅）",
+          "sellCount": 456,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "霸王鸡盒A",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "小皇堡",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "薯霸王（大）",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "经典安格斯单人餐",
+          "price": 40,
+          "oldPrice": 56.5,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "霸王鸡条（微辣）",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "双层皇堡套餐",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "薯霸王（小）",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "优惠",
+      "type": 2,
+      "description":"美味又实惠，大家快来抢。",
+      "foods": [
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "明星好事成双鸡块买一送一",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "天天半价工作餐",
+      "type": -1,
+      "foods": [
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "周一半价双人餐",
+          "price": 85,
+          "oldPrice": 85,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "套餐汉堡",
+      "type": -1,
+      "foods": [
+        {
+          "name": "皇堡套餐",
+          "price": 39,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "皇堡套餐",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "皇堡套餐",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "皇堡套餐",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "皇堡套餐",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        },
+        {
+          "name": "皇堡套餐",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "单品汉堡",
+      "type": -1,
+      "foods": [
+        {
+          "name": "王道椒香鸡腿",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "甜点小吃",
+      "type": -1,
+      "foods": [
+        {
+          "name": "王道椒香鸡腿",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "现磨咖啡",
+      "type": -1,
+      "foods": [
+        {
+          "name": "王道椒香鸡腿",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "饮品系列",
+      "type": -1,
+      "foods": [
+        {
+          "name": "王道椒香鸡腿",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "超人气组合餐",
+      "type": -1,
+      "foods": [
+        {
+          "name": "王道椒香鸡腿",
+          "price": 12,
+          "oldPrice": 12,
+          "description": "1只装王道椒香鸡腿，香味在半径两米的气场里悠悠的蒸腾。不求刻意吮指，但求身心饱足（主要原料：鸡腿）",
+          "sellCount": 746,
+          "rating": 100,
+          "info": "产品描述",
+          "ratings": [
+            {
+              "username": "3****c",
+              "rateTime": 1469281964000,
+              "deliveryTime": 30,
+              "score": 5,
+              "rateType": 0,
+              "text": "好",
+              "avatar": "123123"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ratings": [
+    {
+      "username": "3****c",
+      "rateTime": 1469281964000,
+      "deliveryTime": 30,
+      "score": 5,
+      "rateType": 0,
+      "text": "好",
+      "avatar": "http://static.galileo.xiaojukeji.com/static/tms/default_header",
+      "recommend": [
+        "皇堡",
+        "霸王鸡盒A"
+      ]
+    }
+  ]
+}
+

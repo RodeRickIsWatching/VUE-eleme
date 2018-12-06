@@ -1,0 +1,90 @@
+@mixin download-icon-font($display:block,$font-size:80px) {
+  display: $display;
+  font-size: $font-size;
+  width: 5.333333vw;
+  height: 5.333333vw;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    //overflow: hidden;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin main-sections-icon($color) {
+  color: $color;
+  font-size: 0.8rem;
+  margin-bottom: 0.15rem;
+}
+
+a {
+  color: #8e8e93;
+}
+
+.backIcon {
+  display: inline-block;
+  font-size: 1.173333rem;
+}
+
+.right-icon {
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.overflow-ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tag0{
+  background-color: rgb(112, 188, 70);
+}
+.tag1,.tag4{
+  background-color: rgb(240, 115, 115);
+}
+.tag2,.tag3{
+  background-color: rgb(241, 136, 79);
+}
+.tag5,.tag6{
+  background-color: rgb(153, 153, 153);
+}
+
+.type0{
+  color: rgb(102, 102, 102);
+}
+.type1{
+  color: rgb(51, 51, 51);
+}
+.type2{
+  color: rgb(232, 71, 11);
+}
+
+.onepx-border-bottom{
+  position: absolute;
+  border: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.onepx-border-bottom::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.1);
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5) ;
+  transform-origin: 0 0;
+}
+
+.download-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

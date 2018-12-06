@@ -1,0 +1,14 @@
+[
+  {"name": "来福士广场", "distance": "1", "road": "来福士1号门"},
+  {"name": "来福士2号", "distance": "20", "road": "来福士2号门"},
+  {"name": "来福士3号", "distance": "30", "road": "来福士3号门"},
+  {"name": "来福士4号", "distance": "40", "road": "来福士4号门"},
+  {"name": "来福士5号", "distance": "50", "road": "来福士5号门"},
+  {"name": "常威打来福", "distance": "90", "road": "常威打来福"},
+  {"name": "人民广场1号", "distance": "60", "road": "人民广场1号"},
+  {"name": "人民广场2号", "distance": "50", "road": "人民广场2号"},
+  {"name": "人民广场3号", "distance": "500", "road": "人民广场3号"},
+  {"name": "人民广场4号", "distance": "300", "road": "人民广场4号"},
+  {"name": "人民广场5号", "distance": "350", "road": "人民广场5号"},
+  {"name": "人民广场6号", "distance": "400", "road": "人民广场6号"}
+]
