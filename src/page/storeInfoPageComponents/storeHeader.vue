@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
     <section class="header" :class="{'take-place':!storeInfo}">
-      <div class="store-background-wrapper" v-if="storeInfo"
-      :style="{ backgroundImage: 'url('+ bgArr[0] +')'}">
+      <div class="store-background-wrapper"
+           v-if="storeInfo"
+           v-lazy:background-image="{src: bgArr[0]}">
+      <!--:style="{ backgroundImage: 'url('+ bgArr[0] +')'}">-->
         <!--放壁纸--></div>
       <div class="download-icon-wrapper back-icon" @click="$router.push('/')">
         <svg class="download-icon" aria-hidden="true">
@@ -12,7 +14,8 @@
     </section>
     <section class="content">
       <div class="logo-wrapper" :class="{'take-place':!storeInfo}">
-        <img :src="logoArr[0]">
+        <!--<img :src="logoArr[0]">-->
+        <img v-lazy="logoArr[0]">
       </div>
       <div class="store-name-wrapper" :class="{'take-place':!storeInfo}">
         <h2 v-if="storeInfo">
@@ -68,7 +71,7 @@
     data(){
       return {
         logoArr:[],
-        bgArr:[]
+        bgArr:[],
       }
     },
     components:{

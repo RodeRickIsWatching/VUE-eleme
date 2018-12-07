@@ -26,7 +26,10 @@
                   <div class="goods-info-wrapper" v-if="item.foods" v-for="(item2,index2) in item.foods">
                     <div class="goods-info-container">
                       <div class="goods-img-container">
-                        <span><img src="../../assets/good-info.webp"></span>
+                        <span>
+                          <!--<img src="../../assets/good-info.webp">-->
+                          <img v-lazy="require('../../assets/good-info.webp')">
+                        </span>
                       </div>
                       <div class="goods-item-container">
                         <div class="goods-name"><span>{{item2.name}}</span></div>

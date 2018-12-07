@@ -9,7 +9,8 @@
         :class="{'if-active':index==nowIndex}"
         class="slide-img" v-for="(item,index) in carouselArr">
         <a>
-          <img :src="item">
+          <!--<img :src="item">-->
+          <img v-lazy="{src: item}">
         </a>
       </div>
     </div>
@@ -41,6 +42,12 @@
     },
     computed: {
       ...mapState(["carouselSrc"]),
+      // loadingImgObj(){
+      //   return {
+      //     src: this.bgArr[0],
+      //     loading: require("../../assets/bg-loading.jpg")
+      //   }
+      // }
     },
     methods: {
       checkClass() {

@@ -15,7 +15,9 @@
         <div class="item-container">
           <div class="item-item">
             <div class="item-info">
-              <img src="../../assets/register-logo.png">
+              <!--<img src="../../assets/register-logo.png" v-myPreLoad="{loaded:require('../../assets/user-header.png'),loading:require('../../assets/register-logo.png')}">-->
+              <img v-myPreLoad="{loaded:require('../../assets/user-header.png'),
+                              loading:require('../../assets/register-logo.png')}">
             </div>
             <div class="right-icon download-icon-wrapper">
               <svg class="download-icon" aria-hidden="true">

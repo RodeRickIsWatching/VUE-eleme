@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
 const register = () => import('@/page/homePageComponents/register');
 const rootMenu = () => import('@/page/homePageComponents/rootMenu');
 const discover = () => import('@/page/homePageComponents/discover');
@@ -52,7 +53,8 @@ export default new Router({
       component: UserInfo,
       beforeEnter: (to, from, next) => {
         // console.log(from.meta.ifLogin);
-        if (!from.meta.ifLogin) {
+        // if (!from.meta.ifLogin) {
+        if(!window.localStorage.getItem("userInfo")){
           next('/registerPage')
         } else {
           next();
@@ -64,7 +66,8 @@ export default new Router({
       component: RegisterPage,
       //使用路由守卫的最大好处是，整个vue实例都可以访问的到
       beforeEnter: (to, from, next) => {
-        if (from.meta.ifLogin) {
+        // if (from.meta.ifLogin) {
+          if(window.localStorage.getItem("userInfo")){
           next('/userInfoPage')
         } else {
           next();

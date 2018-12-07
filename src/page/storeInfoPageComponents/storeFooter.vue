@@ -166,7 +166,6 @@
               this.activityObj[i]["condition"] = tempArr[i].split("满")[1].split("减")[0];
               this.activityObj[i]["discount"] = tempArr[i].split("减")[1].split("元")[0];
             }
-            // console.log(this.activityObj)
           }
         }
       }

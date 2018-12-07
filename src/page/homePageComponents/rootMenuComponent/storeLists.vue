@@ -37,7 +37,8 @@
             <div class="basic-info">
               <div class="logo-wrapper" v-if="logoArr.length>0">
                 <!--<img src="../../../assets/store-logo.webp">-->
-                <img :src="logoArr[index]">
+                <!--<img :src="logoArr[index]">-->
+                <img v-lazy="logoArr[index]">
               </div>
               <!--<div class="main-info-wrapper overflow-ellipsis" @click="toStoreInfoPage(index,item)">-->
                 <router-link :to="{path:`/store/store${index}/store${index}`}"
