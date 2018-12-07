@@ -181,6 +181,7 @@ export default new vuex.Store({
           //第一次读取到信息，设置cookie带来的用户信息
           //并且设置用户默认送货地址
           //...暂时省略数据库匹配
+
           let tempObj = storageManage.get('userInfo');
           state.userInfo = Object.assign({}, tempObj.userInfo);
           state.orderedLocation = Object.assign({}, tempObj.orderedLocation);
@@ -200,7 +201,7 @@ export default new vuex.Store({
     },
     setUserInfoCookie(state, _info) {
       CookieManage.set('userId', JSON.stringify(_info), 0.5);
-      storageManage.set('userInfo', JSON.stringify(_info));
+      storageManage.set('userInfo', JSON.stringify(_info), 0.5);
     },
     removeLoginState() {
       CookieManage.delete('userId');

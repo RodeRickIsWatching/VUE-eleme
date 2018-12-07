@@ -1,21 +1,32 @@
 let storageManage = {
-  set: function (name, value) {
-    if(typeof(value) !== "string" ){
-      value = JSON.stringify(value);
-      window.localStorage.setItem(name, value)
-    }else{
-      window.localStorage.setItem(name, value)
-    }
+  set: function (name, value, expired) {
+    //expired这里用天为单位
+    let tempExpired = new Date().getDate() + expired * 1000 * 3600 * 24;
+    let tempVal = {
+      value: value,
+      expired: tempExpired
+    };
+    // if (typeof(value) !== "string") {
+    tempVal = JSON.stringify(tempVal);
+    window.localStorage.setItem(name, tempVal)
+    // } else {
+    //   window.localStorage.setItem(name, value)
+    // }
   },
   get: function (name) {
-    let value = window.localStorage.getItem(name);
-    console.log(JSON.parse(value));
-    return JSON.parse(value);
+    // let value = window.localStorage.getItem(name);
+    // console.log(JSON.parse(value));
+    let tempVal = JSON.parse(window.localStorage.getItem(name));
+    if(new Date().getDate() > tempVal.expired){
+      this.delete(name);
+    }else{
+      return JSON.parse(tempVal.value);
+    }
   },
   delete: function (name) {
     window.localStorage.removeItem(name);
   },
-  clear: function(){
+  clear: function () {
     window.localStorage.clear();
   }
 };

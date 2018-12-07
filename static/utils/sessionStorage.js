@@ -9,7 +9,6 @@ let sessionStorageManage = {
   },
   get: function (name) {
     let value = window.sessionStorage.getItem(name);
-    console.log(JSON.parse(value));
     return JSON.parse(value);
   },
   delete: function (name) {
