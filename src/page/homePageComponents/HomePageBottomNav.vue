@@ -37,6 +37,8 @@
       },
     },
     created(){
+      // this.$router.push({name:'home'});
+      // this.$route.meta.index = 0;
       //页面刷新后自动读取选择的路由，并给予active样式
       this.nowClickIndex = this.$route.meta.index;
     }

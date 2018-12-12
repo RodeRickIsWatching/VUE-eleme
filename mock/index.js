@@ -9,7 +9,7 @@ import storeInfo1 from "./storeInfo1.json"
 import storeInfo2 from "./storeInfo2.json"
 import storeInfo3 from "./storeInfo3.json"
 import storeInfo4 from "./storeInfo4.json"
-
+import checkOut from "./checkoutInfo.json"
 
 
 Mock.mock("/userInfo", "post", function options(options) {
@@ -17,12 +17,12 @@ Mock.mock("/userInfo", "post", function options(options) {
   //未使用前数据是{"ID":"13761696060","passWord":"123456"}
   //使用后 {ID:"13761696060",passWord:"123456"}
   let temp = JSON.parse(options.body);
-  if(temp.passWord && temp.ID){
-    if(temp.passWord == 123456){
+  if (temp.passWord && temp.ID) {
+    if (temp.passWord == 123456) {
       return {
-        data:userInfo.member
+        data: userInfo.member
       }
-    }else{
+    } else {
       return {
         data: userInfo.visitor
       }
@@ -30,43 +30,59 @@ Mock.mock("/userInfo", "post", function options(options) {
   }
 });
 
-Mock.mock("/homePageInfos","get",{
+Mock.mock("/homePageInfos", "get", {
   //包含轮播图、导航栏的图片信息等
-  data:homePageInfos
+  data: homePageInfos
 });
 
-Mock.mock("/storeLists","get",{
+Mock.mock("/storeLists", "get", {
   //所有的商铺信息
-  data:storeLists
+  data: storeLists
 });
 
-Mock.mock("/locationLists","get",{
+Mock.mock("/locationLists", "get", {
   //不同地区对应的地址
-  data:locationLists
+  data: locationLists
 });
 
-Mock.mock("/cityLists","get",{
+Mock.mock("/cityLists", "get", {
   //不同地区对应的地址
-  data:cityLists
+  data: cityLists
 });
 
-Mock.mock("/store0","get",{
+Mock.mock("/store0", "get", {
   //不同地区对应的地址
-  data:storeInfo0
+  data: storeInfo0
 });
-Mock.mock("/store1","get",{
+Mock.mock("/store1", "get", {
   //不同地区对应的地址
-  data:storeInfo1
+  data: storeInfo1
 });
-Mock.mock("/store2","get",{
+Mock.mock("/store2", "get", {
   //不同地区对应的地址
-  data:storeInfo2
+  data: storeInfo2
 });
-Mock.mock("/store3","get",{
+Mock.mock("/store3", "get", {
   //不同地区对应的地址
-  data:storeInfo3
+  data: storeInfo3
 });
-Mock.mock("/store4","get",{
+Mock.mock("/store4", "get", {
   //不同地区对应的地址
-  data:storeInfo4
+  data: storeInfo4
 });
+
+
+Mock.mock("/checkOutUp", "post", function (options) {
+  //本来应该上传给服务器，但是前段无法使用fs，利用storage来模拟
+  window.localStorage.setItem("checkOutInfo", options.body);
+});
+Mock.mock("/checkOut", "get", function () {
+  let temp = JSON.parse(window.localStorage.getItem("checkOutInfo"));
+  return {data: temp}
+});
+
+Mock.mock("/ordered", "get", function(){
+  let temp = JSON.parse(window.localStorage.getItem("ordered"));
+  return {data: temp}
+});
+

@@ -21,12 +21,13 @@
 
 <script>
   import {mapState, mapActions} from "vuex"
+  import axios from "axios"
 
   export default {
     name: "addMinusIcon",
     props: ["item"],
     computed: {
-      ...mapState("storeInfos", ["storeInfo", "shoppingList"]),
+      ...mapState("storeInfos", ["storeInfo", "shoppingList", "menuInfo"]),
       ...mapState(["iconObj"])
     },
     methods: {
@@ -42,7 +43,14 @@
       // console.log(this.item)
     },
     beforeDestroy(){
-    }
+    },
+    // updated(){
+    //   let temp = {
+    //     shoppingList: this.shoppingList,
+    //     menuInfo: this.menuInfo
+    //   };
+    //   axios.post("/shoppingInfos", temp)
+    // },
   }
 </script>
 

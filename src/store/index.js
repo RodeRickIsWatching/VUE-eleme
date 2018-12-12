@@ -9,6 +9,49 @@ vue.use(vuex);
 
 export default new vuex.Store({
   modules: {
+
+    checkoutInfos: {
+      namespaced: true,
+      state: {
+        checkOutInfo: null,
+        tempUpdate: null
+      },
+      mutations: {
+        getCheckOutInfo(state, _list) {
+          state.tempUpdate = Object.assign({}, _list);
+        },
+        downloadCheckOutInfo(state, _list) {
+          console.log(_list);
+          state.checkOutInfo = Object.assign({}, _list);
+        }
+      },
+      actions: {
+        getCheckOutInfo({commit, state, rootState}) {
+          if (rootState.storeInfos.storeInfo && rootState.storeInfos.shoppingList && rootState.storeInfos.menuInfo) {
+            let totalQuantity = 0;
+            for(let i in rootState.storeInfos.shoppingList){
+              totalQuantity += rootState.storeInfos.shoppingList[i].foodCount;
+            }
+
+            let tempObj = {
+              "foodList": rootState.storeInfos.shoppingList,
+              "wholePrice": rootState.storeInfos.menuInfo.wholePrice,
+              "storeName": rootState.storeInfos.storeInfo.seller.name,
+              "discountPrice": rootState.storeInfos.menuInfo.discountPrice,
+              "totalQuantity": totalQuantity,
+              "time": new Date().getTime()
+            };
+            commit("getCheckOutInfo", tempObj)
+          }
+        },
+        downloadCheckOutInfo({commit, state, rootState}, temp) {
+          commit("downloadCheckOutInfo", temp)
+        }
+      }
+
+    },
+    // },
+    // modules:{
     storeInfos: {
       namespaced: true,
       state: {
@@ -25,7 +68,7 @@ export default new vuex.Store({
         getStoreInfos(state, _info) {
           state.storeInfo = Object.assign({}, _info);
         },
-        clearShoppingList(state){
+        clearShoppingList(state) {
           // 路由跳转时清空原数据（直接刷新页面也可以清空，但是效果不好）
           state.shoppingList = Object.assign({}, {});
           state.menuInfo = Object.assign({}, {});
@@ -89,7 +132,7 @@ export default new vuex.Store({
         },
       },
       actions: {
-        clearShoppingList({commit}){
+        clearShoppingList({commit}) {
           commit("clearShoppingList");
         },
         updateShoppingList({commit}, {_menuIndex, _foodIndex, _count}) {
@@ -100,18 +143,11 @@ export default new vuex.Store({
             .then((response) => {
               sessionStorageManage.set('storeInfo', JSON.stringify(response.data.data));
               commit("getStoreInfos", response.data.data);
-            })
+            });
         },
         getStorageInfo({commit, state, dispatch}, _query) {
-          // if (!state.storeInfo) {
-          //   if (sessionStorageManage.get('storeInfo')) {
-          //     state.storeInfo = Object.assign({}, sessionStorageManage.get('storeInfo'));
-              // console.log(state.storeInfo)
-            // } else {
           dispatch("getStoreInfo", _query);
           state.storeInfo = Object.assign({}, sessionStorageManage.get('storeInfo'));
-          // }
-          // }
         }
       }
     }
@@ -136,7 +172,8 @@ export default new vuex.Store({
       "my-icon": "#icon-my",
       "discover-icon": "#icon-discoverfill",
       "add-icon": "#icon-plus-circle-fill",
-      "minus-icon": "#icon-minus-circle"
+      "minus-icon": "#icon-minus-circle",
+      "loading-icon": "#icon-loading"
     },
     userInfo: null,
     orderedLocation: null,
@@ -195,6 +232,7 @@ export default new vuex.Store({
             "orderedPhone": "",
             "defaultLocation": ""
           };
+          storageManage.delete('userInfo');
           return false
         }
       }
@@ -210,7 +248,7 @@ export default new vuex.Store({
     },
     changeLocationFlag(state, statement) {
       //用于控制选择城市那个页面的动画效果
-      state.chooseLocationFlag = statement
+      state.chooseLocationFlag = statement;
     },
     changeCityFlag(state, statement) {
       //用于控制选择城市那个页面的动画效果

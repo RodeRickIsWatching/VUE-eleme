@@ -33,7 +33,7 @@
         <div class="item-title">用户名</div>
         <div class="item-container">
           <div class="item-item">
-            <div class="item-info">
+            <div class="item-info" v-if="userInfo">
               {{userInfo.mainInfo.userName}}
             </div>
             <div class="right-icon download-icon-wrapper">
@@ -60,7 +60,7 @@
         </div>
         <div class="item-container">
           <div class="item-item">
-            <div class="item-info">
+            <div class="item-info" v-if="userInfo">
               {{phoneCal}}
             </div>
             <div class="right-icon download-icon-wrapper">

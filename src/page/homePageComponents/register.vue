@@ -3,7 +3,7 @@
     <div class="header">
       <div class="backIcon download-icon-wrapper">
         <svg class="download-icon" aria-hidden="true">
-          <use :xlink:href="iconControl['left-icon']"></use>
+          <use :xlink:href="iconObj['left-icon']"></use>
         </svg>
       </div>
       <h1 class="header-info">我的</h1>
@@ -17,7 +17,7 @@
           <div class="additional-info">
             <div class="mobile-icon download-icon-wrapper">
               <svg class="download-icon" aria-hidden="true">
-                <use :xlink:href="iconControl['mobile-icon']"></use>
+                <use :xlink:href="iconObj['mobile-icon']"></use>
               </svg>
             </div>
             <span v-if="userInfo == null">登录后享受更多特权</span>
@@ -28,7 +28,7 @@
 
       <div class="right-icon download-icon-wrapper">
         <svg class="download-icon" aria-hidden="true">
-          <use :xlink:href="iconControl['right-icon']"></use>
+          <use :xlink:href="iconObj['right-icon']"></use>
         </svg>
       </div>
     </div>
@@ -71,7 +71,7 @@
           <span class="address">{{item2.article}}</span>
           <div class="right-icon download-icon-wrapper">
             <svg class="download-icon" aria-hidden="true">
-              <use :xlink:href="iconControl['right-icon']"></use>
+              <use :xlink:href="iconObj['right-icon']"></use>
             </svg>
           </div>
         </div>
@@ -110,13 +110,6 @@
             section3: {"article": "我的客服", "icon": this.iconObj["service-icon"]},
             section4: {"article": "下载饿了么APP", "icon": this.iconObj["logo-icon"]}
           }
-        }
-      },
-      iconControl() {
-        return {
-          "left-icon": this.iconObj["left-icon"],
-          "right-icon": this.iconObj["right-icon"],
-          "mobile-icon": this.iconObj["mobile-icon"]
         }
       }
     },

@@ -2,7 +2,6 @@
   <div class="wrapper">
     <div v-if="storeInfo&&!loading">
       <v-storeTitle></v-storeTitle>
-
       <div class="link-view-wrapper">
         <div class="nav-wrapper">
           <div class="link-wrapper">
@@ -26,7 +25,6 @@
           <router-view></router-view>
         </div>
       </div>
-
     </div>
 
     <div v-else>
@@ -42,6 +40,7 @@
   import storeHead from "../storeInfoPageComponents/storeHeader"
   import loadingAnimation from "../utilsComponents/loadingAnimation"
   import {mapState, mapActions} from  "vuex"
+  import axios from "axios"
 
   export default {
     name: "storeInfoPage",
@@ -52,39 +51,53 @@
       }
     },
     computed:{
-      ...mapState("storeInfos",["storeInfo"]),
+      ...mapState("storeInfos",["storeInfo","shoppingList","menuInfo"]),
     },
     components: {
       "v-storeTitle": storeHead,
       "v-loading": loadingAnimation
     },
     methods:{
-      ...mapActions("storeInfos", ["getStorageInfo","getStoreInfo","clearShoppingList"]),
+      ...mapActions("storeInfos", ["getStorageInfo","clearShoppingList"]),
+      ...mapActions(["storeInfos/getStoreInfo"]),
     },
     created() {
-      // this["getStoreInfo"](`${this.$route.params.storeNum}`);
+      //创建时，设置默认路由
+      let url = `/store/${this.$route.params.id}/${this.$route.params.storeNum}/goods`;
+      this.$router.push(url);
+
+      this["storeInfos/getStoreInfo"](`${this.$route.params.storeNum}`);
+
       //获取存到storage中的信息，由于每个店铺不同且是覆盖存储，因此每次进页面都需要get
       //而不是通过判断值不存在才取值
-      if(!this.storeInfo){
-        this["getStorageInfo"](`${this.$route.params.storeNum}`);
-
-        let timer = setTimeout(() => {
-          this.loading = false;
-          clearTimeout(timer)
-        }, 1000)
+      if(!this.storeInfo || Object.values(this.shoppingList).length == 0){
+          //或后面的条件是用于测试，可以删去
+          //即一开始进入走loading动画
+          this["getStorageInfo"](`${this.$route.params.storeNum}`);
+          let timer = setTimeout(() => {
+            this.loading = false;
+            clearTimeout(timer)
+          }, 1000)
       }else{
-        // this.loading = false;
-
-        //下面是模拟,上面是正常形式
-        let timer = setTimeout(() => {
           this.loading = false;
-          clearTimeout(timer)
-        }, 500)
       }
     },
-    beforeDestroy(){
-      // 在离开该路由时清空对象
-      this.clearShoppingList();
+    beforeRouteLeave(to,from,next){
+      if(to.name == "home"){
+        this.clearShoppingList();
+        next();
+      }else{
+        next();
+      }
+    },
+    beforeRouteEnter(to,from,next){
+      if(from.name == "home"){
+        next(vm=>{
+          vm.clearShoppingList();
+        });
+      }else{
+        next();
+      }
     }
   }
 </script>

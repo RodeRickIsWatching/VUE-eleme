@@ -62,13 +62,14 @@
             <span class="price-info" v-if="menuInfo&&menuInfo.menuCount&&Object.values(menuInfo.menuCount).reduce((total,item)=>{return total+item})>0">
               {{shoppingCartMsg}}
             </span>
-            <del>￥38</del>
+            <del v-show="discountPrice">￥{{discountPrice}}</del>
           </span>
 
         </p>
         <p class="delivery-info" v-if="storeInfo">另需配送费{{storeInfo.seller.deliveryPrice}}元</p>
       </div>
-      <a class="submit-button-wrapper"
+      <a @click="toOrder(deliveryPriceCal)"
+         class="submit-button-wrapper"
          :class="{'have-goods': deliveryPriceCal=='去结算'}">
         <span>{{deliveryPriceCal}}</span>
       </a>
@@ -79,6 +80,8 @@
 <script>
   import {mapState,mapActions} from "vuex"
   import addMinusIcon from "./addMinusIcon"
+  import axios from "axios"
+
 
   export default {
     name: "storeFooter",
@@ -89,7 +92,8 @@
         activityObj: {},
         // activityInfo: ''
         nextDiscountCondition:'',
-        otherDiscountInfo:''
+        otherDiscountInfo:'',
+        discountPrice: 0
       }
     },
     components: {
@@ -98,6 +102,7 @@
     computed: {
       ...mapState("storeInfos", ["storeInfo","shoppingList","menuInfo"]),
       ...mapState(["iconObj"]),
+      ...mapState("checkoutInfos", ["tempUpdate"]),
       activityInfo(){
         let str = '';
         let temp = this.storeInfo.seller.minPrice;
@@ -114,16 +119,19 @@
           str = `还差`;
           this.nextDiscountCondition = parseInt((temp-temp2)*10)/10;
           this.otherDiscountInfo = `元起送`;
+          this.discountPrice = 0;
         }else{
           for(let i in this.activityObj){
             if(temp2 >= this.activityObj[i].condition){
               if(!this.activityObj[+i+1] || !(temp2-this.activityObj[i].condition)){
                 str = `已减${this.activityObj[i].discount}元`;
+                this.discountPrice = this.activityObj[i].discount;
                 this.otherDiscountInfo = '';
                 this.nextDiscountCondition = '';
                 return str;
               }
               str = `已减${this.activityObj[i].discount}元，再买`;
+              this.discountPrice = this.activityObj[i].discount;
               this.nextDiscountCondition = parseInt((this.activityObj[+i+1].condition - temp2)*10)/10;
               this.otherDiscountInfo = `元减${this.activityObj[+i+1].discount}元`;
             }else if(temp2 < this.activityObj[0].condition){
@@ -149,12 +157,14 @@
         return str
       },
       shoppingCartMsg(){
-      let temp = '￥'+ this.menuInfo.wholePrice;
+      let temp = '￥'+ parseInt((+this.menuInfo.wholePrice - this.discountPrice)*10)/10;
+      this.$store.state.storeInfos.menuInfo.discountPrice = this.discountPrice;
       return temp;
       }
     },
     methods:{
       ...mapActions("storeInfos", ["getStorageInfo"]),
+      ...mapActions("checkoutInfos", ["getCheckOutInfo","downloadCheckOutInfo"]),
       renderActivityInfo(){
         let tempArr = [];
         for(let i in this.storeInfo.seller.supports){
@@ -167,6 +177,16 @@
               this.activityObj[i]["discount"] = tempArr[i].split("减")[1].split("元")[0];
             }
           }
+        }
+      },
+      toOrder(_statement){
+        if(_statement == "去结算"){
+          // if(this.checkOutInfo){
+          //上传数据
+          this.getCheckOutInfo();
+          axios.post("/checkOutUp", this.tempUpdate)
+          // }
+          this.$router.push({name:'checkOut'})
         }
       }
     },

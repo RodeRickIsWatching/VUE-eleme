@@ -13,7 +13,7 @@ const StoreInfo = () => import('@/page/wholeNewPages/storeInfoPage');
 const goods = () => import('@/page/storeInfoPageComponents/goods');
 const seller = () => import('@/page/storeInfoPageComponents/seller');
 const assessment = () => import('@/page/storeInfoPageComponents/assessment');
-
+const checkOut = () => import('@/page/storeInfoPageComponents/checkOut');
 
 Vue.use(Router);
 
@@ -77,6 +77,9 @@ export default new Router({
     {
       path: '/store/:id/:storeNum',
       //由于有子路由，因此不能使用name属性！
+      meta:{
+        keepAlive: true
+      },
       component: StoreInfo,
       children: [
         {
@@ -86,7 +89,10 @@ export default new Router({
         {
           path: 'goods',
           name:'goods',
-          component: goods
+          component: goods,
+          meta:{
+            keepAlive: true
+          },
         },
         {
           path: 'seller',
@@ -97,6 +103,11 @@ export default new Router({
           component: assessment
         }
       ]
+    },
+    {
+      path: '/checkOut',
+      name: 'checkOut',
+      component: checkOut
     }
   ]
 })

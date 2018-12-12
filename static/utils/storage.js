@@ -1,7 +1,7 @@
 let storageManage = {
   set: function (name, value, expired) {
     //expired这里用天为单位
-    let tempExpired = new Date().getDate() + expired * 1000 * 3600 * 24;
+    let tempExpired = new Date().getTime() + expired * 1000 * 3600 * 24;
     let tempVal = {
       value: value,
       expired: tempExpired
@@ -17,7 +17,8 @@ let storageManage = {
     // let value = window.localStorage.getItem(name);
     // console.log(JSON.parse(value));
     let tempVal = JSON.parse(window.localStorage.getItem(name));
-    if(new Date().getDate() > tempVal.expired){
+    // console.log(tempVal)
+    if(new Date().getTime() > tempVal.expired){
       this.delete(name);
     }else{
       return JSON.parse(tempVal.value);

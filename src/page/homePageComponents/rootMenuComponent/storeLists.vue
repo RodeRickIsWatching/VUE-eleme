@@ -43,9 +43,8 @@
               <!--<div class="main-info-wrapper overflow-ellipsis" @click="toStoreInfoPage(index,item)">-->
                 <router-link :to="{path:`/store/store${index}/store${index}`}"
                              class="main-info-wrapper overflow-ellipsis"
-                             @click="toStoreInfoPage(index,item)"
                              tag="div">
-                <div class="store-name-wrapper">
+                  <div class="store-name-wrapper">
                   <div class="store-name">
                     <span>{{item.name}}</span>
                     <div class="support-icon">
@@ -152,16 +151,6 @@
     methods: {
       ...mapActions(["updateNowLocation"]),
       ...mapActions(["storeInfos/getStoreInfo"]),
-      toStoreInfoPage(index,item){
-        //在点击商铺时，发送axios请求，请求数据
-        this["storeInfos/getStoreInfo"](`store${index}`);
-
-        //最基本的方式
-        // this.$router.push(`/store/store${index}/store${index}`);
-        //name形式需要额外传参，但此处不能用，因为有子路由，因此不能使用name
-        // this.$router.push({name:'storeInfo',params:{id:`store${index}`,storeNum:`store${index}`}});
-
-      },
       storeListInit() {
         let len = Object.keys(this.storeList).length;
         let obj = {"0": "首", "1": "减", "2": "赠", "3": "特", "4": "折", "5": "保", "6": "票"};

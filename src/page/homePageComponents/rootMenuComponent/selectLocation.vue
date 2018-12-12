@@ -161,7 +161,6 @@
     display: flex;
     align-items: center;
     padding-left: 4vw;
-
   span {
     display: inline-block;
     font-size: .32rem;
@@ -176,11 +175,14 @@
   }
 
   .download-icon-wrapper {
-    display: inline-block;
-    position: relative;
-    top: -8px;
-    width: 1.6vw;
-    height: 1.6vw;
+    /*display: inline-block;*/
+    /*position: relative;*/
+    /*top: -8px;*/
+    display: flex;
+    align-items: center;
+    /*width: 1.6vw;*/
+    /*height: 1.6vw;*/
+    /*font-size: 0.5rem;*/
   }
 
   }
@@ -255,7 +257,7 @@
     background-color: #fff;
     position: fixed;
     top: 0;
-    left: 0;
+    /*left: 0;*/
     right: 0;
     bottom: 0;
     z-index: 1000;

@@ -42,7 +42,7 @@ Vue.directive('myPreLoad',{
           el.src = img.src;
           el.style.height = tempHeight;
           el.style.width = tempWidth;
-        },2000)
+        },500)
       }
     }
 
