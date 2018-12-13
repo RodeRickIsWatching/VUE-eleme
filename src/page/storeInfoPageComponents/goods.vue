@@ -178,7 +178,7 @@
       handleDefferInfo(){
         let timer = null;
         let a = new Promise((resolve, reject) => {
-            if(this.storeInfo != null){
+            if(Object.keys(this.storeInfo).length > 0){
               clearTimeout(timer);
               resolve(self);
             }else{
@@ -203,7 +203,7 @@
     },
     created() {
       //初始化betterScroll
-      this.handleDefferInfo();
+        this.handleDefferInfo();
     }
   }
 </script>

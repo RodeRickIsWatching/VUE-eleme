@@ -94,6 +94,7 @@
       if(from.name == "home"){
         next(vm=>{
           vm.clearShoppingList();
+          console.log(vm.menuInfo,vm.shoppingList)
         });
       }else{
         next();

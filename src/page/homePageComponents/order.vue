@@ -9,7 +9,7 @@
       <div class="header-info">订单</div>
     </div>
 
-    <div ref="orderScroll" class="wrapper">
+    <div ref="orderScroll" class="wrapper" v-if="userInfo">
       <div v-if="orderedInfo.length > 0 && showArr.length > 0">
       <div class="order-wrapper"  v-for="(item,index) in showArr">
           <div class="order-info">
@@ -51,6 +51,7 @@
       </div>
     </div>
 
+    <div v-else class="before-login">请登录后查看</div>
 
 
   </div>
@@ -74,7 +75,7 @@
       }
     },
     computed: {
-      ...mapState(["iconObj", "orderedLocation"]),
+      ...mapState(["iconObj", "orderedLocation","userInfo"]),
       ...mapState("checkoutInfos", ["checkOutInfo"]),
     },
     methods:{
@@ -91,7 +92,9 @@
           this.showNum = this.showNum + temp;
         }else{
           for(let i = 0; i < this.defaultNum; i++){
-            this.showArr.push(this.orderedInfo[i])
+            if(this.orderedInfo[i]){
+              this.showArr.push(this.orderedInfo[i])
+            }
           }
         }
       },
@@ -158,18 +161,15 @@
             this.showOrder();
 
             let a = new Promise(res=>{
-              if(this.orderedInfo.length>0){
+              if(this.orderedInfo.length>4 && this.userInfo){
                 res();
               }
             });
-
             a.then(res=>{
               this.BSInit();
               this.orderScroll.refresh();
             })
-
           });
-
       })
     },
   }
@@ -178,6 +178,13 @@
 <style scoped lang="scss" type="text/css">
   @import "../../style/utils.scss";
 
+  .before-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 0.8rem;
+  }
   .header {
     width: 100%;
     color: #fff;

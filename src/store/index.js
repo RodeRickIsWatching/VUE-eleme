@@ -21,7 +21,6 @@ export default new vuex.Store({
           state.tempUpdate = Object.assign({}, _list);
         },
         downloadCheckOutInfo(state, _list) {
-          console.log(_list);
           state.checkOutInfo = Object.assign({}, _list);
         }
       },

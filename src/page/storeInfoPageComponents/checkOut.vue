@@ -172,6 +172,7 @@
         temp = JSON.stringify(temp);
         window.localStorage.setItem("ordered",temp);
         window.sessionStorage.removeItem("storeInfo");
+        alert("已下单，配送中");
         this.$router.push('/home');
       },
       goBack() {
@@ -180,12 +181,12 @@
       ...mapActions("checkoutInfos",["downloadCheckOutInfo"])
     },
     created(){
-      this.$nextTick(()=>{
+      // this.$nextTick(()=>{
         axios.get("/checkOut")
           .then((res)=>{
-            this.downloadCheckOutInfo(res.data.data);
+              this.downloadCheckOutInfo(res.data.data);
           });
-      })
+      // })
     }
   }
 </script>

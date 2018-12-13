@@ -74,7 +74,13 @@ Mock.mock("/store4", "get", {
 
 Mock.mock("/checkOutUp", "post", function (options) {
   //本来应该上传给服务器，但是前段无法使用fs，利用storage来模拟
-  window.localStorage.setItem("checkOutInfo", options.body);
+  let a = new Promise(res=>{
+    window.localStorage.setItem("checkOutInfo", options.body);
+    res("ok");
+  });
+  a.then(res=>{
+    return {data: res}
+  })
 });
 Mock.mock("/checkOut", "get", function () {
   let temp = JSON.parse(window.localStorage.getItem("checkOutInfo"));

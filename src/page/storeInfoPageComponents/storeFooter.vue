@@ -101,7 +101,7 @@
     },
     computed: {
       ...mapState("storeInfos", ["storeInfo","shoppingList","menuInfo"]),
-      ...mapState(["iconObj"]),
+      ...mapState(["iconObj","userInfo"]),
       ...mapState("checkoutInfos", ["tempUpdate"]),
       activityInfo(){
         let str = '';
@@ -180,13 +180,29 @@
         }
       },
       toOrder(_statement){
-        if(_statement == "去结算"){
-          // if(this.checkOutInfo){
-          //上传数据
-          this.getCheckOutInfo();
-          axios.post("/checkOutUp", this.tempUpdate)
-          // }
-          this.$router.push({name:'checkOut'})
+        if(this.userInfo){
+          if(_statement == "去结算"){
+            //上传数据
+            this.getCheckOutInfo();
+            let a = new Promise((response)=>{
+              axios.post("/checkOutUp", this.tempUpdate)
+                .then(res=>{
+                  response(res.statusText)
+                })
+            });
+            //上传完毕后跳转
+            a.then((res)=>{
+              if(res.toUpperCase() == "OK"){
+                axios.get("/checkOut")
+                  .then((res)=>{
+                    this.downloadCheckOutInfo(res.data.data);
+                    this.$router.push({name:'checkOut'})
+                  });
+              }
+            })
+          }
+        }else{
+         alert("请先登录！")
         }
       }
     },
