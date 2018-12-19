@@ -35,8 +35,7 @@
         <ul>
           <li v-for="(item,index) in storeList">
             <div class="basic-info">
-              <div class="logo-wrapper" v-if="logoArr.length>0">
-                <!--<img src="../../../assets/store-logo.webp">-->
+              <div class="logo-wrapper">
                 <!--<img :src="logoArr[index]">-->
                 <img v-lazy="logoArr[index]">
               </div>
@@ -146,7 +145,7 @@
     },
     computed: {
       ...mapState(["iconObj", "storeList","orderedLocation"]),
-      ...mapState(["storeInfos/storeInfo"])
+      ...mapState("storeInfos",["storeInfo"])
     },
     methods: {
       ...mapActions(["updateNowLocation"]),
@@ -181,7 +180,7 @@
       },
       getLogoImg(){
         for(let i = 0; i < this.storeList.length; i++){
-          let temp = require(`../../../assets/stores/store${i}-logo.webp`);
+          let temp = require(`../../../`+this.storeList[i].avatar);
           this.logoArr.push(temp);
         }
       }
@@ -189,6 +188,7 @@
     created() {
       this.storeListInit();
       this.getLogoImg();
+      console.log(this.storeList)
     }
   }
 </script>

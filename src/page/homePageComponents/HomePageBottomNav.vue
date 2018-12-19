@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import {mapState} from "vuex"
+  import {mapState,mapMutations} from "vuex"
 
   export default {
     name: "HomePageBottomNav",
@@ -41,7 +41,7 @@
       // this.$route.meta.index = 0;
       //页面刷新后自动读取选择的路由，并给予active样式
       this.nowClickIndex = this.$route.meta.index;
-    }
+    },
   }
 </script>
 

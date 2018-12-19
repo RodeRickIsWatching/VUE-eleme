@@ -16,7 +16,8 @@
         "discount": "0",
         "coins": "198"
       },
-      "city": "上海市"
+      "city": "上海市",
+      "headInfo": "static/head-img/1.jpg"
     },
     "orderedLocation": {
       "orderedName": "陆",

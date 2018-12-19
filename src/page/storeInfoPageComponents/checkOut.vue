@@ -181,12 +181,10 @@
       ...mapActions("checkoutInfos",["downloadCheckOutInfo"])
     },
     created(){
-      // this.$nextTick(()=>{
         axios.get("/checkOut")
           .then((res)=>{
               this.downloadCheckOutInfo(res.data.data);
           });
-      // })
     }
   }
 </script>

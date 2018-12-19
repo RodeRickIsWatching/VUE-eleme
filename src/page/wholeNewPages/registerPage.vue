@@ -11,11 +11,11 @@
       <form>
         <div class="input-wrapper" v-for="(item,index) in inputArr">
           <input :type="item.type" :placeholder="item.placeholder" :index="index"
-                 :class="{'ifActive':selected==index}"
-                 @click="selected=index"
-                 @input="chargeNumber($event)">
+                 :class="{'passWordInput':index==1,'ifActive':selected==index,'ifFail':loginFail}"
+                 @click="selected=index,loginFail=false"
+                 @input="chargeNumber($event,index)">
         </div>
-        <button class="getMessage" :class="{'getMessageActive':messageActive}" @click="getMessage()">获取验证码</button>
+        <button type="button" class="getMessage" :class="{'getMessageActive':messageActive}" v-my-alert="{val:`模拟验证码，123456`}">获取验证码</button>
 
         <div class="other-info">
           新用户登录即自动注册，并表已同意
@@ -31,6 +31,11 @@
     <div v-if="loading" class="loading-wrapper" :class="{active:loading}">
       <v-loading></v-loading>
     </div>
+
+      <div class="failLoadInfo" v-if="loginFail">
+        手机号或验证码错误！
+      </div>
+
   </div>
 </template>
 
@@ -48,7 +53,10 @@
         selected: -1,
         inputArr: {0: {"type": "text", "placeholder": "手机号"}, 1: {"type": "password", "placeholder": "验证码"}},
         messageActive: false,
-        loading: false
+        loading: false,
+        passwordVal: '',
+        IDVal: '',
+        loginFail: false
       }
     },
     computed: {
@@ -61,41 +69,78 @@
       goBack() {
         this.$router.push({name: "register"});
       },
-      getMessage() {
-        alert("模拟验证码，123456")
-      },
-      chargeNumber(e) {
-        if (e.target.type == "text") {
-          let reg = /^\d{11}$/;
-          let val = e.target.value;
-          if (reg.test(val)) {
-            this.messageActive = true
+      chargeNumber(e,_index) {
+        if(_index == 1){
+          this.passwordVal = e.target.value;
+        }else{
+          if (e.target.type == "text") {
+            let reg = /^\d{11}$/;
+            let val = e.target.value;
+            if (reg.test(val)) {
+              this.messageActive = true;
+              this.IDVal = val;
+            } else {
+              this.messageActive = false;
+            }
           } else {
-            this.messageActive = false
+            this.messageActive = false;
           }
-        } else {
-          this.messageActive = false
         }
       },
       login() {
-        let timer = null;
-        let temp = new Promise((resolve) => {
-          resolve(this.$store.dispatch("login"))
-        });
-        temp.then(() => {
-          this.loading = true;
-          timer = setTimeout(() => {
-            this.$router.push({name:"register"});
-            clearTimeout(timer)
-          }, 2000)
-        });
+        let self = this;
+        this.$store.dispatch("login",{ID: this.IDVal, passWord: this.passwordVal,err: this.err,suc: this.suc, self: self});
+      },
+      err(self){
+        self.loginFail = true;
+        let timer = setTimeout(()=>{
+          self.loginFail = false;
+          clearTimeout(timer)
+        },8000)
+      },
+      suc(self){
+        // self.loading = true;
+        self.$router.push({name:"register"});
+        self.loading = false;
       }
     }
   }
 </script>
 
 <style scoped lang="scss" type="text/css">
-
+  /*.ifFail{*/
+    /*border-color: red!important;*/
+  /*}*/
+  .failLoadInfo{
+    position: absolute;
+    top: 33.333%;
+    right: 30%;
+    border: 1px solid #8e8e93;
+    border-radius: 12vw 12vw;
+    text-align: center;
+    width: 40vw;
+    height: 10vw;
+    line-height: 10vw;
+    background-color: #8e8e93;
+    color: #fff;
+    animation: fade 8s linear forwards;
+  }
+  @keyframes fade {
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity: 1;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  
+  
   #wrapper {
     text-align: center;
     position: relative;

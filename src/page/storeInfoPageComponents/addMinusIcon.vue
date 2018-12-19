@@ -33,24 +33,14 @@
     methods: {
       ...mapActions("storeInfos", ["getStorageInfo", "updateShoppingList"]),
       foodControl(_item, _index, _state) {
-        let tempObj = {_menuIndex: _item, _foodIndex: _index, _count: _state};
-        // console.log(tempObj);
-
+        let tempObj = {_menuIndex: _item, _foodIndex: _index, _count: _state, _storeNum: this.$route.params.storeNum};
         this.updateShoppingList(tempObj)
       },
     },
     created() {
-      // console.log(this.item)
     },
     beforeDestroy(){
-    },
-    // updated(){
-    //   let temp = {
-    //     shoppingList: this.shoppingList,
-    //     menuInfo: this.menuInfo
-    //   };
-    //   axios.post("/shoppingInfos", temp)
-    // },
+    }
   }
 </script>
 

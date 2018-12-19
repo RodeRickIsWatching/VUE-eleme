@@ -81,17 +81,6 @@
         loading: true
       }
     },
-    created() {
-      if (this.userInfo || this.orderedLocation.defaultLocation) {
-        this.loading = false;
-      } else {
-        let timer = setTimeout(() => {
-          this.loading = false;
-          clearTimeout(timer)
-          this.$once("click",this.clickLocationFlag(true));
-        }, 2000)
-      }
-    },
     computed: {
       ...mapState(["storeList","iconObj", "orderedLocation", "userInfo", "otherInfo", "homePageNav", "chooseLocationFlag"])
     },
@@ -110,6 +99,19 @@
         } else {
           this.changeLocationFlag(false);
         }
+      }
+    },
+    created() {
+      if (this.userInfo || this.orderedLocation.defaultLocation) {
+        //关闭选择地址的组件
+        this.clickLocationFlag(false);
+        this.loading = false;
+      } else {
+        let timer = setTimeout(() => {
+          this.loading = false;
+          clearTimeout(timer);
+          this.$once("click",this.clickLocationFlag(true));
+        }, 2000)
       }
     }
   }

@@ -28,7 +28,7 @@ export default new vuex.Store({
         getCheckOutInfo({commit, state, rootState}) {
           if (rootState.storeInfos.storeInfo && rootState.storeInfos.shoppingList && rootState.storeInfos.menuInfo) {
             let totalQuantity = 0;
-            for(let i in rootState.storeInfos.shoppingList){
+            for (let i in rootState.storeInfos.shoppingList) {
               totalQuantity += rootState.storeInfos.shoppingList[i].foodCount;
             }
 
@@ -38,8 +38,10 @@ export default new vuex.Store({
               "storeName": rootState.storeInfos.storeInfo.seller.name,
               "discountPrice": rootState.storeInfos.menuInfo.discountPrice,
               "totalQuantity": totalQuantity,
+              "storeId": rootState.storeInfos.menuInfo.storeId,
               "time": new Date().getTime()
             };
+
             commit("getCheckOutInfo", tempObj)
           }
         },
@@ -72,7 +74,7 @@ export default new vuex.Store({
           state.shoppingList = Object.assign({}, {});
           state.menuInfo = Object.assign({}, {});
         },
-        updateShoppingList(state, {_menuIndex, _foodIndex, _count}) {
+        updateShoppingList(state, {_menuIndex, _foodIndex, _count, _storeNum}) {
           // 初始化列表
           if (!state.shoppingList[`${_menuIndex}${_foodIndex}`]) {
             state.shoppingList[`${_menuIndex}${_foodIndex}`] = {};
@@ -113,6 +115,8 @@ export default new vuex.Store({
           }
           state.menuInfo.wholePrice = Math.round(temp * 10) / 10;
 
+          state.menuInfo.storeId = _storeNum;
+
           //删除为0的列表
           for (let i in state.shoppingList) {
             if (state.shoppingList[i].foodCount == 0) {
@@ -134,8 +138,8 @@ export default new vuex.Store({
         clearShoppingList({commit}) {
           commit("clearShoppingList");
         },
-        updateShoppingList({commit}, {_menuIndex, _foodIndex, _count}) {
-          commit("updateShoppingList", {_menuIndex, _foodIndex, _count});
+        updateShoppingList({commit}, {_menuIndex, _foodIndex, _count, _storeNum}) {
+          commit("updateShoppingList", {_menuIndex, _foodIndex, _count, _storeNum});
         },
         getStoreInfo({commit, state}, _query) {
           axios.get(`/${_query}`)
@@ -213,12 +217,12 @@ export default new vuex.Store({
         //  读取过了不需要再次读取
         return true
       } else {
-        if (CookieManage.get('userId') && storageManage.get('userInfo')) {
+        if (CookieManage.get('userId')) {
           //第一次读取到信息，设置cookie带来的用户信息
           //并且设置用户默认送货地址
           //...暂时省略数据库匹配
 
-          let tempObj = storageManage.get('userInfo');
+          let tempObj = JSON.parse(CookieManage.get('userId'));
           state.userInfo = Object.assign({}, tempObj.userInfo);
           state.orderedLocation = Object.assign({}, tempObj.orderedLocation);
           state.choosedCity = state.userInfo.city;
@@ -238,7 +242,7 @@ export default new vuex.Store({
     },
     setUserInfoCookie(state, _info) {
       CookieManage.set('userId', JSON.stringify(_info), 0.5);
-      storageManage.set('userInfo', JSON.stringify(_info), 0.5);
+      // storageManage.set('userInfo', JSON.stringify(_info), 0.5);
     },
     removeLoginState() {
       CookieManage.delete('userId');
@@ -272,23 +276,39 @@ export default new vuex.Store({
     removeLoginState({commit}) {
       commit("removeLoginState")
     },
-    readLoginState({commit, dispatch, state}) {
+    readLoginState({commit, dispatch, state}, _info) {
       //读取用户信息
-      commit("readLoginState");
+      commit("readLoginState", _info);
       dispatch("getHomePageInfos");
     },
-    login({commit}) {
+    login({commit,dispatch}, {ID, passWord, err, suc, self}) {
       //登录，并将信息放到cookie
       axios.post("/userInfo", {
-        ID: "13761696060",
-        passWord: "123456"
+        ID: ID,
+        passWord: passWord
       })
-        .then((response) => {
-          commit("setUserInfoCookie", response.data.data)
-        })
-        .catch((error) => {
-          commit("setUserInfoCookie", null);
-        });
+      .then((response) => {
+        if(response.data.data){
+          //验证成功开启读取动画
+          self.loading = true;
+          //开启异步
+          (async (_data)=>{
+            let temp = new Promise((resolve)=>{
+              resolve(commit("setUserInfoCookie",_data));
+            });
+            await temp;
+            dispatch("readLoginState",response.data.data);
+          })(response.data.data);
+
+          let timer = setTimeout(() => {
+            //模拟读取了2s的数据
+            suc(self);
+            clearTimeout(timer)
+          }, 2000)
+        }else{
+          err(self)
+        }
+      })
 
     },
     getCityLists({commit}) {

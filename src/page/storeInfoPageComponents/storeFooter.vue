@@ -74,6 +74,7 @@
         <span>{{deliveryPriceCal}}</span>
       </a>
     </div>
+    <div class="failLoadInfo" v-if="loginFail">请先登录！</div>
   </div>
 </template>
 
@@ -93,7 +94,8 @@
         // activityInfo: ''
         nextDiscountCondition:'',
         otherDiscountInfo:'',
-        discountPrice: 0
+        discountPrice: 0,
+        loginFail: false
       }
     },
     components: {
@@ -180,6 +182,7 @@
         }
       },
       toOrder(_statement){
+        //跳转订单信息页面
         if(this.userInfo){
           if(_statement == "去结算"){
             //上传数据
@@ -202,7 +205,11 @@
             })
           }
         }else{
-         alert("请先登录！")
+          this.loginFail = true;
+          let timer = setTimeout(()=>{
+            clearTimeout(timer);
+            this.loginFail = false;
+          },4000)
         }
       }
     },
@@ -215,6 +222,36 @@
 </script>
 
 <style scoped lang="scss" type="text/css">
+
+  .failLoadInfo{
+    position: absolute;
+    top: 33.333%;
+    right: 30%;
+    border: 1px solid #8e8e93;
+    border-radius: 12vw 12vw;
+    text-align: center;
+    width: 40vw;
+    height: 10vw;
+    line-height: 10vw;
+    background-color: #8e8e93;
+    color: #fff;
+    animation: fade 4s linear forwards;
+  }
+  @keyframes fade {
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity: 1;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+
   .wrapper {
     font-size: .426667rem;
   }

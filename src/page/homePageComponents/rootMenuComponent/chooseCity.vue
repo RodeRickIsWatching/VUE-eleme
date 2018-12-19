@@ -64,7 +64,6 @@
       },
       chooseCityName(_index){
         let cityLists = this.$refs.cityLists.getElementsByClassName("item-title");
-        console.log(cityLists[_index]);
         this.cityListScroll.refresh();
         this.cityListScroll.scrollToElement(cityLists[_index],200);
       },
@@ -72,8 +71,17 @@
         this.cityListScroll = new BS(this.$refs.cityLists,{
           click: true,
           probeType: 3,
-          scrollY: true
+          scrollY: true,
+          bounce:{
+            top: false,
+            bottom: false,
+            left: false,
+            right: false
+          }
         });
+        // this.cityListScroll.on("scrollEnd",()=>{
+        //   console.log(this.cityListScroll )
+        // })
       },
       handleDefferInfo(){
         let timer = null;
@@ -89,21 +97,31 @@
         a.then(resolve=>{
           clearTimeout(timer);
           this.$nextTick(()=>{
-            this.BSInit();
-            this.cityListScroll.refresh();
+            if(this.cityListScroll){
+              this.cityListScroll.refresh();
+            }else{
+              this.BSInit();
+            }
           })
         });
         a.catch(reject=>{
           timer = setTimeout(()=>{
             console.log("1s后尝试再次获取");
-            this.handleDefferInfo();
+            this.$nextTick(()=>{
+              this.handleDefferInfo();
+            })
           },1000)
         })
       }
     },
     created(){
-      this.handleDefferInfo();
-    }
+      //关闭选择城市的组件
+      this.changeCityFlag(false);
+      //初始化scroll
+      this.$nextTick(()=>{
+        this.handleDefferInfo();
+      })
+    },
   }
 </script>
 

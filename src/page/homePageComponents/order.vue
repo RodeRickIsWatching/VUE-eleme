@@ -14,7 +14,7 @@
       <div class="order-wrapper"  v-for="(item,index) in showArr">
           <div class="order-info">
             <div class="store-logo">
-              <img src="../../assets/store0-logo.webp">
+              <img v-lazy="logoArr[index]">
             </div>
             <div class="store-content">
               <div class="store-content-head">
@@ -69,24 +69,31 @@
         orderedInfo: {},
         orderScroll: null,
         ifScrollOver: false,
-        showNum: 10,
+        showNum: 5,
         showArr: [],
         defaultNum: 5,
+        logoArr: []
       }
     },
     computed: {
       ...mapState(["iconObj", "orderedLocation","userInfo"]),
-      ...mapState("checkoutInfos", ["checkOutInfo"]),
+      ...mapState("checkoutInfos", ["checkOutInfo"])
     },
     methods:{
       ...mapActions("checkoutInfos",["downloadCheckOutInfo"]),
+      imgComputed(){
+        for(let i = 0; i < this.showArr.length; i++){
+          let temp = require(`../../assets/stores/${this.showArr[i].storeId}-logo.webp`);
+          this.logoArr.push(temp)
+        }
+      },
       showOrder(){
         let temp = 0;
         if(this.orderedInfo.length >= this.defaultNum && this.showArr.length >= this.defaultNum){
           for(let i = this.showNum; i < this.showNum+3; i++){
             if(this.orderedInfo[i]){
               temp++;
-              this.showArr.push(this.orderedInfo[i])
+              this.showArr.push(this.orderedInfo[i]);
             }
           }
           this.showNum = this.showNum + temp;
@@ -97,6 +104,7 @@
             }
           }
         }
+        this.imgComputed();
       },
       timeCal(_item){
         let nowDuration = new Date().getTime();
@@ -161,7 +169,7 @@
             this.showOrder();
 
             let a = new Promise(res=>{
-              if(this.orderedInfo.length>4 && this.userInfo){
+              if(this.orderedInfo.length >= this.defaultNum-1 && this.userInfo && this.showArr.length>0){
                 res();
               }
             });

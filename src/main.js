@@ -45,13 +45,58 @@ Vue.directive('myPreLoad',{
         },500)
       }
     }
-
-
-
-
-
-
   }
 });
 
+Vue.directive('myAlert',function(el,binding){
+    let oDiv = document.createElement("div");
+    let oText = document.createElement("div");
+    let oBtn = document.createElement("div");
+    oDiv.classList.add("my-alert");
+
+    oText.innerText = binding.value.val;
+    oBtn.innerText = "确认";
+
+    oBtn.onclick = (e)=>{
+      e.stopPropagation();
+      el.getElementsByClassName("my-alert")[0].style.display = `none`;
+      el.removeChild(oDiv);
+    };
+    el.onclick = ()=>{
+      el.appendChild(oDiv);
+      el.getElementsByClassName("my-alert")[0].style.display = `block`;
+    };
+
+    oBtn.style.width = `100px`;
+    oBtn.style.height = `50px`;
+    oBtn.style.textAlign = `center`;
+    oBtn.style.lineHeight = `50px`;
+    oBtn.style.position = `absolute`;
+    oBtn.style.bottom = `0%`;
+    oBtn.style.right = `0%`;
+    oBtn.style.backgroundColor = "#2379dd";
+    oBtn.style.color = "#fff";
+
+    oText.style.lineHeight = `200px`;
+    oText.style.textAlign = `center`;
+    oText.style.verticalAlign = `middle`;
+    oText.style.color = `#000`;
+
+    oDiv.style.width = `400px`;
+    oDiv.style.height = `200px`;
+    oDiv.style.border = `1px solid black`;
+    oDiv.style.backgroundColor = "#fff";
+    oDiv.style.position = `fixed`;
+    oDiv.style.top = `50%`;
+    oDiv.style.left = `50%`;
+    oDiv.style.transform = `translate(-50%, -50%)`;
+    oDiv.style.zIndex = `333`;
+    oDiv.style.display = `none`;
+
+
+    oDiv.appendChild(oText);
+    oDiv.appendChild(oBtn);
+
+  }
+);
 

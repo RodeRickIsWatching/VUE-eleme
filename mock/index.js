@@ -9,7 +9,6 @@ import storeInfo1 from "./storeInfo1.json"
 import storeInfo2 from "./storeInfo2.json"
 import storeInfo3 from "./storeInfo3.json"
 import storeInfo4 from "./storeInfo4.json"
-import checkOut from "./checkoutInfo.json"
 
 
 Mock.mock("/userInfo", "post", function options(options) {
@@ -24,7 +23,7 @@ Mock.mock("/userInfo", "post", function options(options) {
       }
     } else {
       return {
-        data: userInfo.visitor
+        data: null
       }
     }
   }

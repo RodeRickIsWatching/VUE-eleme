@@ -1,6 +1,7 @@
 [
   {
     "name": "Hi鱼饭子BuddhaBowl&Sushi(巨鹿路店)",
+    "avatar": "assets/stores/store0-logo.webp",
     "deliveryWay": "",
     "score": "5",
     "monthlySale": "1586",
@@ -55,6 +56,7 @@
   },
   {
     "name": "炙串阁烧烤（外滩店）",
+    "avatar": "assets/stores/store1-logo.webp",
     "deliveryWay": "蜂鸟专送",
     "score": "3.7",
     "monthlySale": "1586",
@@ -97,6 +99,7 @@
   },
   {
     "name": "达美乐",
+    "avatar": "assets/stores/store2-logo.webp",
     "deliveryWay": "蜂鸟专送",
     "score": "2",
     "monthlySale": "1586",
@@ -147,6 +150,7 @@
   },
   {
     "name": "汉堡王（大宁中心店22604）",
+    "avatar": "assets/stores/store3-logo.webp",
     "deliveryWay": "蜂鸟专送",
     "score": "4.25",
     "monthlySale": "1586",
@@ -197,6 +201,7 @@
   },
   {
     "name": "Hi鱼饭子BuddhaBowl&Sushi(巨鹿路店)",
+    "avatar": "assets/stores/store4-logo.webp",
     "deliveryWay": "",
     "score": "5",
     "monthlySale": "1586",

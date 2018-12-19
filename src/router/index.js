@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import CookieManage from "../../static/utils/cookie"
 
 
 const register = () => import('@/page/homePageComponents/register');
@@ -54,7 +55,7 @@ export default new Router({
       beforeEnter: (to, from, next) => {
         // console.log(from.meta.ifLogin);
         // if (!from.meta.ifLogin) {
-        if(!window.localStorage.getItem("userInfo")){
+        if(!CookieManage.get("userId")){
           next('/registerPage')
         } else {
           next();
@@ -67,7 +68,7 @@ export default new Router({
       //使用路由守卫的最大好处是，整个vue实例都可以访问的到
       beforeEnter: (to, from, next) => {
         // if (from.meta.ifLogin) {
-          if(window.localStorage.getItem("userInfo")){
+          if(CookieManage.get("userId")){
           next('/userInfoPage')
         } else {
           next();

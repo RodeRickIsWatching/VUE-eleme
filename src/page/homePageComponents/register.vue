@@ -10,7 +10,10 @@
     </div>
     <div class="login-wrapper">
       <div class="register-info" @click="toLoginPage($event)">
-        <img src="../../assets/register-logo.png">
+        <!--<img src="../../assets/register-logo.png">-->
+        <img  v-if="userInfo" v-myPreLoad="{loaded:userInfo.headInfo,
+        loading:require('../../assets/register-logo.png')}">
+        <img v-else src="../../assets/register-logo.png">
         <div class="title-info">
           <span class="title" v-if="userInfo == null">登录/注册</span>
           <span class="title" v-else>{{userInfo.mainInfo.userName}}</span>
@@ -61,7 +64,7 @@
     </div>
 
     <div class="other-sections">
-      <div class="sections-wrapper" v-for="(item,index) in iconControlArr">
+      <div class="sections-wrapper" v-for="(item,index) in iconControlArr" v-my-alert="{val:'开发中'}">
         <div class="section" :class="index2" v-for="(item2,index2) in item">
           <div class="more-info-icon download-icon-wrapper">
             <svg class="download-icon" aria-hidden="true">
@@ -116,11 +119,11 @@
     methods: {
       toLoginPage(e) {
         this.$router.push('/registerPage');
-        if (this.$router.options.routes[0].children[3].meta.ifLogin) {
-          alert("跳转至用户信息页面");
-        } else {
-          alert("跳转至登录页面");
-        }
+        // if (this.$router.options.routes[0].children[3].meta.ifLogin) {
+        //   alert("跳转至用户信息页面");
+        // } else {
+        //   alert("跳转至登录页面");
+        // }
       },
       readUserState() {
         this.$store.dispatch("readLoginState");
@@ -174,6 +177,8 @@
   }
 
   .register-info img {
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
   }
 

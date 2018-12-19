@@ -10,14 +10,17 @@
     </div>
 
     <div class="user-info-wrapper">
-      <div class="item-wrapper">
+      <!--click事件用于触发点击隐藏的input框-->
+      <div class="item-wrapper" @click="$refs.uploadInput.click()">
+        <!--input用于打开file选择，但是是隐藏的-->
+        <input type="file" accept="image/*" @change="handleFile($event)" v-show="false" ref="uploadInput">
         <div class="item-title">头像</div>
         <div class="item-container">
           <div class="item-item">
             <div class="item-info">
-              <!--<img src="../../assets/register-logo.png" v-myPreLoad="{loaded:require('../../assets/user-header.png'),loading:require('../../assets/register-logo.png')}">-->
-              <img v-myPreLoad="{loaded:require('../../assets/user-header.png'),
-                              loading:require('../../assets/register-logo.png')}">
+              <img :src="userInfo.headInfo">
+              <!--<img ref="headImg" v-myPreLoad="{loaded:headImg,-->
+                              <!--loading:require('../../assets/register-logo.png')}">-->
             </div>
             <div class="right-icon download-icon-wrapper">
               <svg class="download-icon" aria-hidden="true">
@@ -114,6 +117,17 @@
     },
     methods:{
       ...mapActions(["removeLoginState"]),
+      handleFile(e){
+        //思路通过filereader将上传的文件读取城base64格式，并动态改变src属性
+        let file = e.target.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = (data) => {
+          let res = data.target;
+          this.userInfo.headInfo = res.result;
+        };
+      },
       goBack(){
         this.$router.push({name:"register"});
       },
@@ -127,6 +141,9 @@
         //  因此需要手动刷新
         }, 2000)
       }
+    },
+    created(){
+      console.log(this.userInfo)
     }
   }
 </script>
@@ -183,6 +200,8 @@
     display: inline-block;
     margin-right:5vw;
   img{
+      height: 120px;
+      width: 120px;
       border-radius: 50%;
       border: 1px solid transparent;
     }
