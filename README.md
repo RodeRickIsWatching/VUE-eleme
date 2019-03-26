@@ -1,3 +1,6 @@
+**友情提示！不要看代码！第一次写项目！vuex里非常乱！乱！**
+
+
 ![](https://github.com/RodeRickIsWatching/vue-eleme/blob/master/%E6%95%88%E6%9E%9Cgif/0%E5%9C%B0%E5%9D%80%E9%80%89%E6%8B%A9+%E7%99%BB%E5%BD%95%E5%89%8D%E5%95%86%E9%93%BA%E4%BF%A1%E6%81%AF.gif?raw=true)
 
 ![](https://github.com/RodeRickIsWatching/vue-eleme/blob/master/%E6%95%88%E6%9E%9Cgif/1%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&%E7%99%BB%E5%87%BA&%E5%A4%B4%E5%83%8F%E6%9B%B4%E6%8D%A2.gif?raw=true)
